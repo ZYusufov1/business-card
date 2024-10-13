@@ -19,7 +19,7 @@ const AboutMe = () => {
                     </Group>
                 </Stack>
 
-                <Image w={185} h={277} src="src/assets/mainPhoto.jpg" className={styles.mainPhoto}/>
+                <Image w={185} h={277} src="/business-card/assets/mainPhoto.jpg" className={styles.mainPhoto}/>
             </Flex>
         </Stack>
     )
