@@ -11,7 +11,6 @@ const router = createHashRouter(
         { path: '/', element: <MainPage /> },
         { path: '/explore', element: <div /> },
     ],
-    { basename: '/business-card' }
 )
 
 createRoot(document.getElementById('root')!).render(
