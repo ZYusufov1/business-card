@@ -1,18 +1,9 @@
 .block {
-    width: 100%;
     background-color: #1a1a1a;
-    padding: 27px 73px 48px;
-}
-
-.firstLastName {
-    font-size: 100px;
-    color: white;
 }
 
 .mainPhoto {
     object-fit: cover;
-    width: 185px;
-    height: 277px;
 }
 
 .aboutMe {
@@ -23,8 +14,4 @@
 .hardSkills {
     background-color: #D9D9D9;
     border-radius: 15px;
-}
-
-.textBlock {
-
 }
