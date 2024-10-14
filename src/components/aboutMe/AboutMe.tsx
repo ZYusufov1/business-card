@@ -13,9 +13,9 @@ const AboutMe = () => {
 
     return (
         <Stack className={styles.block} w="100%" pt={27} pl={73} pr={73} pb={48} gap={77}>
-            <Text fw={600} fz={100} color="white" ta="center" m={0}>{name}</Text>
+            <Text fw={600} fz={100} c="white" ta="center" m={0}>{name}</Text>
 
-            <Flex gap={34} p={40}>
+            <Flex gap={34}>
                 <Stack gap={37}>
                     <Group className={styles.aboutMe} mih={153} w="79%" align="start">
                         <Text fz={25} p="10px 17px" w="100%">About me: {aboutMe}</Text>
