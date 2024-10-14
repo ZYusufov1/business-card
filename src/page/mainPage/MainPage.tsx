@@ -1,23 +1,14 @@
-import { Button, Stack } from '@mantine/core'
+import { Stack } from '@mantine/core'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import AboutMe from '../../components/aboutMe/AboutMe.tsx'
+import Projects from '../../components/projects/Projects.tsx'
 
 const MainPage = () => {
-    const navigate = useNavigate()
     const [isExiting, setIsExiting] = useState(false)
-
-    const handleNavigate = () => {
-        setIsExiting(true)
-
-        setTimeout(() => {
-            navigate('/explore')
-        }, 500)
-    }
-
+    
     return (
-        <Stack w="100%" gap={0}>
+        <Stack w="100%" gap={0} style={{ background: '#1a1a1a' }}>
             <AnimatePresence>
                 {!isExiting && (
                     <>
@@ -33,16 +24,14 @@ const MainPage = () => {
                         <motion.div
                             initial={{ opacity: 1, y: 0 }}
                             animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 200 }} // Нижний блок перемещается вниз
+                            exit={{ opacity: 0, y: 200 }}
                             transition={{ duration: 0.5 }}
                         >
-                            <h3>Bottom Component</h3>
+                            <Projects setIsExiting={setIsExiting}/>
                         </motion.div>
                     </>
                 )}
             </AnimatePresence>
-
-            <Button onClick={handleNavigate}>Go to Explore</Button>
         </Stack>
     )
 }
