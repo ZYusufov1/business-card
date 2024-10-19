@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import AboutMe from '../../components/aboutMe/AboutMe.tsx'
 import Projects from '../../components/projects/Projects.tsx'
+import ContactInfo from '../../components/contactInfo/ContactInfo.tsx'
 
 const MainPage = () => {
     const [isExiting, setIsExiting] = useState(false)
@@ -28,6 +29,8 @@ const MainPage = () => {
                             transition={{ duration: 0.5 }}
                         >
                             <Projects setIsExiting={setIsExiting}/>
+
+                            <ContactInfo />
                         </motion.div>
                     </>
                 )}
