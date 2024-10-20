@@ -1,13 +1,20 @@
-import { Anchor, Flex } from '@mantine/core'
+import { Anchor } from '@mantine/core'
 
-const ContactInfo = () => {
+interface ContactInfoProps {
+    orderResume?: number,
+    orderContact?: number,
+    orderMail?: number
+}
+
+const ContactInfo = ({ orderResume, orderContact, orderMail }: ContactInfoProps) => {
     return (
-        <Flex pl={73} pt={41} pb={49} pr={73} justify="space-between">
+        <>
             <Anchor
                 underline="hover"
                 href="tel:+79365106387"
                 c="white"
                 fz={30}
+                style={{ order: orderContact }}
             >
                 Contact me
             </Anchor>
@@ -17,6 +24,7 @@ const ContactInfo = () => {
                 c="white"
                 fz={30}
                 data-disabled
+                style={{ order: orderResume }}
             >
                 Download a resume
             </Anchor>
@@ -26,10 +34,11 @@ const ContactInfo = () => {
                 href="mailto:zaury8252@gmail.com"
                 c="white"
                 fz={30}
+                style={{ order: orderMail }}
             >
                 Mail
             </Anchor>
-        </Flex>
+        </>
     )
 }
 
