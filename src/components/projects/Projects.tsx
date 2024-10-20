@@ -25,12 +25,19 @@ const Projects = ({ setIsExiting }: IProjectsProps) => {
         setIsExiting(true)
 
         setTimeout(() => {
-            navigate('/explore')
+            navigate('/projectsList')
         }, 500)
     }
 
     return (
-        <Stack pl={73} pr={73} pt={57} pb={21} gap={24} className={styles.block}>
+        <Stack
+            pl={73}
+            pr={73}
+            pt={57}
+            pb={21}
+            gap={24}
+            className={styles.block}
+        >
             <Stack gap={76}>
                 {
                     projects.map((item) => (
