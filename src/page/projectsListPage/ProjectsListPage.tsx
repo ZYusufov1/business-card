@@ -5,6 +5,7 @@ import WorkProjects from '../../components/workProjects/WorkProjects.tsx'
 import styles from './../../syles/CustomScrollBar.module.css'
 import { useState } from 'react'
 import { useMediaQuery } from '@mantine/hooks'
+import ProjectList from '../../components/ProjectList.tsx'
 
 const ProjectsListPage = () => {
     const isMobile = useMediaQuery('(max-width: 768px)')
@@ -83,6 +84,8 @@ const ProjectsListPage = () => {
                 )}
 
                 {activeLink === 'Work Project' && (<WorkProjects isMobile={isMobile} />)}
+
+	            {activeLink === 'Home Project' && (<ProjectList />)}
             </motion.div>
         </Flex>
 )

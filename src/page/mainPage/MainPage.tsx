@@ -1,15 +1,20 @@
 import { Flex, Stack } from '@mantine/core'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import AboutMe from '../../components/aboutMe/AboutMe.tsx'
 import Projects from '../../components/projects/Projects.tsx'
 import ContactInfo from '../../components/contactInfo/ContactInfo.tsx'
 import styles from './../../syles/CustomScrollBar.module.css'
 import { useMediaQuery } from '@mantine/hooks'
+import fetchRepositories from '../../fetchRepositories.ts'
 
 const MainPage = () => {
     const [isExiting, setIsExiting] = useState(false)
     const isMobile = useMediaQuery('(max-width: 768px)')
+
+    useEffect(() => {
+        fetchRepositories()
+    }, [])
 
     return (
         <Stack w="100%" gap={0} style={{ background: '#1a1a1a', height: '100vh' }} className={styles.scrollBar}>
