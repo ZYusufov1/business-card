@@ -16,3 +16,29 @@
     background: none;
     border-radius: 10px;
 }
+
+.burger > div, .burger > div::before, .burger > div::after {
+    border-radius: 20px;
+}
+
+.activeSection {
+    padding: 2px 12px;
+    height: min-content;
+    font-size: 22px;
+    border: 1px solid #FFFFFF;
+    width: max-content;
+    border-radius: 15px;
+    background: #242423;
+    color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+    .scrollBar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollBar::-webkit-scrollbar {
+        display: none;
+    }
+}
