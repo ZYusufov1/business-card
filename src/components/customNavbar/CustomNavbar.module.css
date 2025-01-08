@@ -35,3 +35,9 @@
     border-bottom: 1px solid #FFFFFF;
     font-weight: 700 !important;
 }
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 100svh;
+    }
+}

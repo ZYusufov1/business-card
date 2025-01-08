@@ -23,7 +23,7 @@ const WorkProjects = ({ isMobile }: WorkProjectsProps) => {
 	]
 
 	return (
-		<Stack pl={!isMobile ? 24 : 38} pt={38} pr={!isMobile ? 67: 38} pb={!isMobile ? 'auto': 90} gap={36}>
+		<Stack pl={!isMobile ? 24 : 38} pt={38} pr={!isMobile ? 67: 38} pb={38} gap={36}>
 			{projectList.map((item) => (
 				<Stack
 					gap={0}

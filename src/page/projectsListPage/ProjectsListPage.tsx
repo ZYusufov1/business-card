@@ -47,7 +47,7 @@ const ProjectsListPage = () => {
                             position: 'absolute',
                             left: 0,
                             top: 0,
-                            height: '100vh',
+                            height: !isMobile ? '100vh' : '100svh',
                             zIndex: 1000,
                         } : {}}
                     >
@@ -66,7 +66,7 @@ const ProjectsListPage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
                 exit={{ opacity: 0, x: 200 }}
-                style={{ width: '100%', height: '100vh' }}
+                style={{ width: '100%', height: !isMobile ? '100vh' : '100svh' }}
                 className={styles.scrollBar}
             >
                 {isMobile && (

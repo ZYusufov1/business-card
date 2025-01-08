@@ -17,7 +17,12 @@ const MainPage = () => {
     }, [])
 
     return (
-        <Stack w="100%" gap={0} style={{ background: '#1a1a1a', height: '100vh' }} className={styles.scrollBar}>
+        <Stack
+            w="100%"
+            gap={0}
+            style={{ background: '#1a1a1a', height: !isMobile ? '100vh' : '100svh' }}
+            className={styles.scrollBar}
+        >
             <AnimatePresence>
                 {!isExiting && (
                     <>

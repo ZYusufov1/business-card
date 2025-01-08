@@ -37,7 +37,7 @@ const ProjectList: React.FC = () => {
     }
 
     return (
-        <Layout pl={!isMobile ? 133 : 38} pr={!isMobile ? 105: 38} pt={38} pb={72} gap={20} w="100%">
+        <Layout pl={!isMobile ? 133 : 38} pr={!isMobile ? 105: 38} pt={38} pb={38} gap={20} w="100%">
             {projects.map((project) => (
                 <Card
                     key={project.repoName}

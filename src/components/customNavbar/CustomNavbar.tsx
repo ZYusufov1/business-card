@@ -22,7 +22,7 @@ const CustomNavbar = ({ setIsExiting, setActiveLink, activeLink, isMobile }: Cus
 	}
 
 	return (
-		<Stack w={!isMobile ? 300 : 150} className={styles.navbar} justify="space-between" pt={38} pb={38}>
+		<Stack w={!isMobile ? 300 : 150} className={styles.navbar} justify="space-between" pt={!isMobile ? 38 : 20} pb={!isMobile ? 38 : 20}>
 			<Stack gap={16} align="center">
 				<Text className={styles.title} fz={!isMobile ? 30 : 20} fw={900}>PROJECTS</Text>
 
