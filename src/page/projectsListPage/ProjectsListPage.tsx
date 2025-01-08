@@ -52,6 +52,7 @@ const ProjectsListPage = () => {
                         } : {}}
                     >
                         <CustomNavbar
+                            isMobile={isMobile}
                             setIsExiting={setIsExiting}
                             setActiveLink={setActiveLink}
                             activeLink={activeLink}

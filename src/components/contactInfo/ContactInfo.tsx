@@ -11,6 +11,7 @@ const ContactInfo = ({ orderResume, orderContact, orderMail, isMobile }: Contact
 	return (
 		<>
 			<Anchor
+				ta="center"
 				underline="hover"
 				href="tel:+79365106387"
 				c="white"
@@ -21,6 +22,7 @@ const ContactInfo = ({ orderResume, orderContact, orderMail, isMobile }: Contact
 			</Anchor>
 
 			<Anchor
+				ta="center"
 				underline="hover"
 				c="white"
 				fz={!isMobile ? 30 : 20}
@@ -31,6 +33,7 @@ const ContactInfo = ({ orderResume, orderContact, orderMail, isMobile }: Contact
 			</Anchor>
 
 			<Anchor
+				ta="center"
 				underline="hover"
 				href="mailto:zaury8252@gmail.com"
 				c="white"
