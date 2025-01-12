@@ -23,9 +23,10 @@ const WorkProjects = ({ isMobile }: WorkProjectsProps) => {
 	]
 
 	return (
-		<Stack pl={!isMobile ? 24 : 38} pt={38} pr={!isMobile ? 67: 38} pb={38} gap={36}>
-			{projectList.map((item) => (
+		<Stack pl={!isMobile ? 24 : 38} pt={38} pr={!isMobile ? 67: 38} pb={38} gap={36} w="100%">
+			{projectList.map((item, index) => (
 				<Stack
+					key={index}
 					gap={0}
 					style={{ background: '#B4B4B4' }}
 					pl={30}

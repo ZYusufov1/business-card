@@ -1,3 +1,23 @@
 .block {
     background-color: #000000;
 }
+
+.gradientText {
+    font-weight: 600;
+    font-size: 30px;
+    color: white;
+    background: linear-gradient(90deg, black, white, black, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 4s infinite linear;
+    background-size: 300% 100%;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}

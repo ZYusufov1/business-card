@@ -34,6 +34,7 @@
 
 @media (max-width: 768px) {
     .scrollBar {
+        flex-direction: column;
         -ms-overflow-style: none;
         scrollbar-width: none;
     }

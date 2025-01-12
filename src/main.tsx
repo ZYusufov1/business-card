@@ -2,10 +2,12 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { MantineProvider } from '@mantine/core'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
+import { Provider as ReduxProvider } from 'react-redux'
 import MainPage from './page/mainPage/MainPage.tsx'
 import ProjectsListPage from './page/projectsListPage/ProjectsListPage.tsx'
 import '@mantine/core/styles.css'
 import './index.css'
+import store from './store/store.ts'
 
 const router = createHashRouter(
     [
@@ -16,8 +18,10 @@ const router = createHashRouter(
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <MantineProvider>
-            <RouterProvider router={router} />
-        </MantineProvider>
+        <ReduxProvider store={store}>
+            <MantineProvider>
+                <RouterProvider router={router} />
+            </MantineProvider>
+        </ReduxProvider>
     </StrictMode>
 )

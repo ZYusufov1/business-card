@@ -54,7 +54,7 @@ const Projects = ({ setIsExiting, isMobile }: IProjectsProps) => {
 			</Stack>
 
 			<Flex justify="center">
-				<Anchor onClick={handleNavigate} underline="hover" fw={600} fz={!isMobile ? 30 : 20} c="white">
+				<Anchor onClick={handleNavigate} underline="hover" fw={600} fz={!isMobile ? 30 : 20} c="white" className={styles.gradientText}>
 					View more
 				</Anchor>
 			</Flex>

@@ -1,43 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import fetchRepositories from '../fetchRepositories.ts'
+import React from 'react'
 import { Anchor, Card, Flex, Stack, Text } from '@mantine/core'
 import { useMediaQuery } from '@mantine/hooks'
+import { useSelector } from 'react-redux'
+import { selectLoading, selectProjects } from '../../store/projects/slice.ts'
+import { Project } from '../../store/projects/types.ts'
 
-interface Project {
-    repoName: string;
-    repoUrl: string;
-    projectUrl: string;
-    label: string;
-    preview: string;
-}
-
-const ProjectList: React.FC = () => {
-    const [projects, setProjects] = useState<Project[]>([])
+const HomeProjects: React.FC = () => {
     const isMobile = useMediaQuery('(max-width: 768px)')
     const Layout = isMobile ? Stack : Flex
-    const [loading, setLoading] = useState(true)
-
-    useEffect(() => {
-        const loadProjects = async () => {
-            try {
-                const data = await fetchRepositories()
-                setProjects(data || [])
-            } catch (error) {
-                console.error('Error download projects:', error)
-            } finally {
-                setLoading(false)
-            }
-        }
-
-        loadProjects()
-    }, [])
+    const projects = useSelector(selectProjects).filter((item: Project) => item.type != 'Game')
+    const loading = useSelector(selectLoading)
 
     if (loading) {
         return <div>Download...</div>
     }
 
     return (
-        <Layout pl={!isMobile ? 133 : 38} pr={!isMobile ? 105: 38} pt={38} pb={38} gap={20} w="100%">
+        <Layout
+            wrap="wrap"
+            pl={!isMobile ? 24 : 38}
+            pr={!isMobile ? 24: 38}
+            pt={38}
+            pb={38}
+            gap={20}
+            h="min-content"
+            w="100%"
+        >
             {projects.map((project) => (
                 <Card
                     key={project.repoName}
@@ -84,4 +72,4 @@ const ProjectList: React.FC = () => {
     )
 }
 
-export default ProjectList
+export default HomeProjects

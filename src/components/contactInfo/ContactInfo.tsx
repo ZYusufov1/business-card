@@ -1,4 +1,5 @@
-import { Anchor } from '@mantine/core'
+import { Anchor, Image, Text } from '@mantine/core'
+import icon from './../../../public/telegram.svg'
 
 interface ContactInfoProps {
 	orderResume?: number,
@@ -12,17 +13,22 @@ const ContactInfo = ({ orderResume, orderContact, orderMail, isMobile }: Contact
 		<>
 			<Anchor
 				ta="center"
+				display="flex"
 				underline="hover"
-				href="tel:+79365106387"
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://t.me/zyusu"
 				c="white"
 				fz={!isMobile ? 30 : 20}
-				style={{ order: !isMobile ? orderContact : 2 }}
+				style={{ order: !isMobile ? orderContact : 2, alignItems: 'center', gap: 5 }}
 			>
-				Contact me
+				Telegram <Image h={!isMobile ? 45 : 22} w={!isMobile ? 45 : 22} src={icon} alt="telegram"/>
 			</Anchor>
 
 			<Anchor
 				ta="center"
+				target="_blank"
+				rel="noopener noreferrer"
 				underline="hover"
 				c="white"
 				fz={!isMobile ? 30 : 20}
@@ -32,16 +38,13 @@ const ContactInfo = ({ orderResume, orderContact, orderMail, isMobile }: Contact
 				Download a resume
 			</Anchor>
 
-			<Anchor
-				ta="center"
-				underline="hover"
-				href="mailto:zaury8252@gmail.com"
+			<Text
 				c="white"
 				fz={!isMobile ? 30 : 20}
 				style={{ order: !isMobile ? orderMail : 1 }}
 			>
-				Mail
-			</Anchor>
+				zaury8252@gmail.com
+			</Text>
 		</>
 	)
 }

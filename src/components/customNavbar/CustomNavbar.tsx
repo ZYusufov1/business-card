@@ -28,18 +28,6 @@ const CustomNavbar = ({ setIsExiting, setActiveLink, activeLink, isMobile }: Cus
 
 				<Stack gap={1} align="center" w='100%'>
 					<Text
-						className={`${styles.link} ${activeLink === 'All Projects' ? styles.active : ''}`}
-						fz={!isMobile ? 22 : 14}
-						fw={300}
-						pt={20}
-						pb={20}
-						w="100%"
-						onClick={() => setActiveLink('All Projects')}
-					>
-						All Projects
-					</Text>
-
-					<Text
 						className={`${styles.link} ${activeLink === 'Work Project' ? styles.active : ''}`}
 						fz={!isMobile ? 22 : 14}
 						fw={300}
@@ -62,9 +50,20 @@ const CustomNavbar = ({ setIsExiting, setActiveLink, activeLink, isMobile }: Cus
 					>
 						Home Project
 					</Text>
-				</Stack>
 
-				<Text className={styles.title} fz={!isMobile ? 30 : 20} fw={900} mb={20}>GAMES</Text>
+					<Text
+						className={`${styles.link} ${activeLink === 'GAMES' ? styles.active : ''}`}
+						w="100%"
+						fz={!isMobile ? 30 : 20}
+						pt={20}
+						pb={20}
+						fw={900}
+						mb={20}
+						onClick={() => setActiveLink('GAMES')}
+					>
+						GAMES
+					</Text>
+				</Stack>
 
 				<Anchor onClick={handleNavigate} className={styles.title} fz={!isMobile ? 30 : 20} fw={900} c="white">
 					MAIN PAGE

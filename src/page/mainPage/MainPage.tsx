@@ -6,15 +6,18 @@ import Projects from '../../components/projects/Projects.tsx'
 import ContactInfo from '../../components/contactInfo/ContactInfo.tsx'
 import styles from './../../syles/CustomScrollBar.module.css'
 import { useMediaQuery } from '@mantine/hooks'
-import fetchRepositories from '../../fetchRepositories.ts'
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from '../../store/store.ts'
+import { fetchRepositoriesThunk } from '../../store/projects/actions.ts'
 
 const MainPage = () => {
     const [isExiting, setIsExiting] = useState(false)
     const isMobile = useMediaQuery('(max-width: 768px)')
+    const dispatch = useDispatch<AppDispatch>()
 
     useEffect(() => {
-        fetchRepositories()
-    }, [])
+        dispatch(fetchRepositoriesThunk())
+    }, [dispatch])
 
     return (
         <Stack
@@ -32,7 +35,7 @@ const MainPage = () => {
                             exit={{ opacity: 0, y: -200 }}
                             transition={{ duration: 0.5 }}
                         >
-                            <AboutMe/>
+                            <AboutMe isMobile={isMobile}/>
                         </motion.div>
 
                         <motion.div
