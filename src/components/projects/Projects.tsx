@@ -1,6 +1,7 @@
 import { Anchor, Divider, Stack, Text, Flex } from '@mantine/core'
 import { useNavigate } from 'react-router-dom'
 import styles from './Projects.module.css'
+import { workProjectList } from '../../store/workProjectList.ts'
 
 interface IProjectsProps {
 	setIsExiting: (value: boolean) => void,
@@ -9,18 +10,6 @@ interface IProjectsProps {
 
 const Projects = ({ setIsExiting, isMobile }: IProjectsProps) => {
 	const navigate = useNavigate()
-
-	//TODO take data in GET API in the future
-	const projects = [
-		{
-			name: 'Project name',
-			description: 'Project description'
-		},
-		{
-			name: 'Project name',
-			description: 'Project description'
-		},
-	]
 
 	const handleNavigate = () => {
 		setIsExiting(true)
@@ -41,7 +30,7 @@ const Projects = ({ setIsExiting, isMobile }: IProjectsProps) => {
 		>
 			<Stack gap={76}>
 				{
-					projects.map((item) => (
+					workProjectList.slice(0, 2).map((item) => (
 						<Stack gap={0}>
 							<Text c="white" fw={600} fz={25} mb="2.5">{item.name}</Text>
 

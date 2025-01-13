@@ -1,30 +1,15 @@
 import { Divider, Stack, Text } from '@mantine/core'
 import styles from './WorkProjects.module.css'
+import { workProjectList } from '../../store/workProjectList.ts'
 
 interface WorkProjectsProps {
 	isMobile?: undefined | boolean
 }
 
 const WorkProjects = ({ isMobile }: WorkProjectsProps) => {
-	//TODO will write a real projects in future
-	const projectList = [
-		{
-			name: 'Project name',
-			description: 'Project description'
-		},
-		{
-			name: 'Project name',
-			description: 'Project description'
-		},
-		{
-			name: 'Project name',
-			description: 'Project description'
-		},
-	]
-
 	return (
 		<Stack pl={!isMobile ? 24 : 38} pt={38} pr={!isMobile ? 67: 38} pb={38} gap={36} w="100%">
-			{projectList.map((item, index) => (
+			{workProjectList.map((item, index) => (
 				<Stack
 					key={index}
 					gap={0}

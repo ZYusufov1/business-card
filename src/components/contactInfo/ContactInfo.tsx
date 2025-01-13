@@ -1,5 +1,5 @@
 import { Anchor, Image, Text } from '@mantine/core'
-import icon from './../../../public/telegram.svg'
+import icon from '../../../public/assets/telegram.svg'
 
 interface ContactInfoProps {
 	orderResume?: number,
@@ -26,13 +26,14 @@ const ContactInfo = ({ orderResume, orderContact, orderMail, isMobile }: Contact
 			</Anchor>
 
 			<Anchor
+				href="/business-card/Resume_Yusufov_Zaur.pdf"
+				download
 				ta="center"
 				target="_blank"
 				rel="noopener noreferrer"
 				underline="hover"
 				c="white"
 				fz={!isMobile ? 30 : 20}
-				data-disabled
 				style={{ order: !isMobile ? orderResume : 3 }}
 			>
 				Download a resume
