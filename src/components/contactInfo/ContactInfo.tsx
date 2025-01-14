@@ -40,6 +40,7 @@ const ContactInfo = ({ orderResume, orderContact, orderMail, isMobile }: Contact
 			</Anchor>
 
 			<Text
+				ta="center"
 				c="white"
 				fz={!isMobile ? 30 : 20}
 				style={{ order: !isMobile ? orderMail : 1 }}

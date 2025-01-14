@@ -1,0 +1,16 @@
+.skeleton {
+	background-color: #B4B4B4;
+	animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+	0% {
+		background-color: #B4B4B4;
+	}
+	50% {
+		background-color: #c5c5c5;
+	}
+	100% {
+		background-color: #B4B4B4;
+	}
+}

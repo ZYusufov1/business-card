@@ -1,12 +1,13 @@
-import { Burger, Flex } from '@mantine/core'
+import { Burger, Flex, Stack } from '@mantine/core'
 import CustomNavbar from '../../components/customNavbar/CustomNavbar.tsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import WorkProjects from '../../components/workProjects/WorkProjects.tsx'
-import styles from './../../syles/CustomScrollBar.module.css'
+import styles from '../../styles/CustomScrollBar.module.css'
 import { useState } from 'react'
 import { useMediaQuery } from '@mantine/hooks'
 import HomeProjects from '../../components/homeProjects/HomeProjects.tsx'
 import GamesProjects from '../../components/gamesProjects/GamesProjects.tsx'
+import ContactInfo from '../../components/contactInfo/ContactInfo.tsx'
 
 const ProjectsListPage = () => {
     const isMobile = useMediaQuery('(max-width: 768px)')
@@ -67,7 +68,10 @@ const ProjectsListPage = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
                 exit={{ opacity: 0, x: 200 }}
-                style={{ width: '100%', height: !isMobile ? '100vh' : '100svh' }}
+                style={{ width: '100%', height: !isMobile ? '100vh' : '100svh',
+                    display: 'flex',
+                    flexDirection: 'column',
+                }}
                 className={styles.scrollBar}
             >
                 {isMobile && (
@@ -90,6 +94,12 @@ const ProjectsListPage = () => {
 	            {activeLink === 'Home Project' && (<HomeProjects />)}
 
                 {activeLink === 'GAMES' && (<GamesProjects isMobile={isMobile}/>)}
+
+                {isMobile && (
+                    <Stack pt={14} pb={14} mt='auto' align="center" bg="#111111">
+                        <ContactInfo isMobile={isMobile}/>
+                    </Stack>
+                )}
             </motion.div>
         </Flex>
 )

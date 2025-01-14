@@ -22,7 +22,7 @@ const CustomNavbar = ({ setIsExiting, setActiveLink, activeLink, isMobile }: Cus
 	}
 
 	return (
-		<Stack w={!isMobile ? 300 : 150} className={styles.navbar} justify="space-between" pt={!isMobile ? 38 : 20} pb={!isMobile ? 38 : 20}>
+		<Stack w={!isMobile ? 320 : 150} className={styles.navbar} justify="space-between" pt={!isMobile ? 38 : 20} pb={!isMobile ? 38 : 20}>
 			<Stack gap={16} align="center">
 				<Text className={styles.title} fz={!isMobile ? 30 : 20} fw={900}>PROJECTS</Text>
 
@@ -70,9 +70,11 @@ const CustomNavbar = ({ setIsExiting, setActiveLink, activeLink, isMobile }: Cus
 				</Anchor>
 			</Stack>
 
-			<Stack align="center">
-				<ContactInfo isMobile={isMobile} orderResume={3} orderContact={2} orderMail={1}/>
-			</Stack>
+			{!isMobile && (
+				<Stack align="center">
+					<ContactInfo isMobile={isMobile} orderResume={3} orderContact={2} orderMail={1}/>
+				</Stack>
+			)}
 		</Stack>
 	)
 }
